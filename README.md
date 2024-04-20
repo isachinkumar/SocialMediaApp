@@ -1,101 +1,70 @@
-# Sociopedia-Social-Media-App
-A full-stack social media web application that allows users to post, like, add friends and delete posts. A post is an image along with a description.
+# Getting Started with Create React App
 
-# Api Documentation :
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
-### 1. **Register to Social-Media-App**
+In the project directory, you can run:
 
-  ```http
-  POST /auth/register
-  ```
-- Row body structure for a post request of file attchment :
+### `npm start`
 
-  | Parameter      | Type               | Required  | Description              | Default |
-  | :------------- | :----------------- | :-------- | :----------------------- | :------ |
-  | `firstName`         | `string`           | **true**  | User First Name  | -       |
-  | `lastName`         | `string`           | **true**  | User Last Name  | -       |
-  | `email`         | `string`           | **true**  | User Email  | -       |
-  | `password`         | `string`           | **true**  | User Password  | -       |
-  | `picturePath`         | `string`           | **true**  | User Email  | " "       |
-  | `friends`         | `array of strings`           | **false**  | User Password  | [ ]      |
-   | `location`         | `string`           | **true**  | User Email  | -       |
-  | `occupation`         | `string`           | **true**  | User Password  | -       |
- 
-- Example for post request through **Postman** [form-data] (using a local storage file)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-  | Key     | value |
-  | :------ | :------ |
-  | firstName |    Ankita     |
-  | lastName |    Gurwan     |
-  | email |    ankitgur03@gmail.com     |
-  | password |    password     |
-  | picturePath |    https://res-console.cloudinary.com/dyufvjigd/thumbnails/v1/image/upload/v1689438573/cWFzZXRpcjA5d2k0c2t0cXdrc3U=/grid_landscape     |
-  | location |    village khaira kalan     |
-  | occupation |    student     |
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- Example Response on success **(status code 201)**
-  ```javascript
-  {
-    "firstName": "Ankita",
-    "lastName": "Gurwan",
-    "email": "ankitgur03@gmail.com",
-    "password": "$2b$10$RWR3BZhK.EPphmQ1WZLPY.jmGV76YWMKqrgnDXUoTfTp/lO8vYGJC",
-    "picturePath": "https://res-console.cloudinary.com/dyufvjigd/thumbnails/v1/image/upload/v1689438573/cWFzZXRpcjA5d2k0c2t0cXdrc3U=/grid_landscape",
-    "friends": [],
-    "location": "village khaira kalan",
-    "occupation": "student",
-    "viewedProfile": "459",
-    "impressions": "393",
-    "_id": "64b97b5654805eabeaf05f0c",
-    "createdAt": "2023-07-20T18:22:14.146Z",
-    "updatedAt": "2023-07-20T18:22:14.146Z",
-    "__v": 0
-    }
-  ```
+### `npm test`
 
-### 2. **Login to Social-Media-App**
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-  ```http
-  POST /auth/register
-  ```
-- Row body structure for a post request of file attchment :
+### `npm run build`
 
-  | Parameter      | Type               | Required  | Description              | Default |
-  | :------------- | :----------------- | :-------- | :----------------------- | :------ |
-  | `email`         | `string`           | **true**  | User Email  | -       |
-  | `password`         | `string`           | **true**  | User Password  | -       |
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
- 
-- Example for post request through **Postman** [form-data] (using a local storage file)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-  | Key     | value |
-  | :------ | :------ |
-  | email |    ankitgur03@gmail.com     |
-  | password |    password     |
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-- Example Response on success **(status code 201)**
-  ```javascript
-    {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Yjk3YjU2NTQ4MDVlYWJlYWYwNWYwYyIsImlhdCI6MTY4OTg3NzQzNn0.EVXx83HzABLOGaf5UZ3AC0TQf_bYVWjR1foKgp580FI",
-        "user": {
-            "_id": "64b97b5654805eabeaf05f0c",
-            "firstName": "Ankita",
-            "lastName": "Gurwan",
-            "email": "ankitgur03@gmail.com",
-            "password": "$2b$10$RWR3BZhK.EPphmQ1WZLPY.jmGV76YWMKqrgnDXUoTfTp/lO8vYGJC",
-            "picturePath": "https://res-console.cloudinary.com/dyufvjigd/thumbnails/v1/image/upload/v1689438573/cWFzZXRpcjA5d2k0c2t0cXdrc3U=/grid_landscape",
-            "friends": [],
-            "location": "village khaira kalan",
-            "occupation": "student",
-            "viewedProfile": "459",
-            "impressions": "393",
-            "createdAt": "2023-07-20T18:22:14.146Z",
-            "updatedAt": "2023-07-20T18:22:14.146Z",
-            "__v": 0
-            }
-    }   
-  ```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
